@@ -6,7 +6,7 @@ function App(props) {
     return (
         <div className="add-expense-app">
             <div className="heading">
-                Select Category
+                Select Category.
             </div>
             <div className="categories">
                 <img cat-name="Education" src="https://cdn-icons.flaticon.com/png/512/3976/premium/3976625.png?token=exp=1636791393~hmac=68db79a5000e4927c891f1d1253a1761" className="cat-edu"/>
