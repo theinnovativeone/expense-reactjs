@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -12,16 +8,26 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-header{
+  background-color: black;
+}
+.App-header .head {
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin);
+  padding-left:6%;
+  padding-right:6%;
+  font-weight:500;
   color: white;
+}
+.App-header .body{
+  margin:0px;
+  font-size:small;
+  padding-left:5%;
+  padding-right:5%;
 }
 
 @keyframes App-logo-spin {
@@ -32,37 +38,268 @@
     transform: rotate(360deg);
   }
 }
-.App-button{
-  color:#282c34;
+.App .App-button{
+  color:black;
   background-color: white;
-  line-height: 2em;
-  font-size: 1em;
-  position:fixed;
-  bottom:10px;
+  line-height: 3em;
+  font-size: 0.8em;
+  font-weight:600;
   border: 1px solid white;
   width: 90%;
-  max-width:400px;
+  border-radius: 20px 20px;
+  max-width:100px;
   text-decoration: none;
 }
 Link{
   text-decoration: none;
+  transition:1s ease;
 }
 .App-button:hover{
-  background-color:#282c34;
+  background-color:black;
   color:white;
   transition: 0.3s ease;
 }
-.title{
+.App .title{
   text-align:left;
-  background-color:#282c34;
+  background-color:black;
   color:white;
   width:100%;
   position:fixed;
   top:0px;
 }
-.body{
-  margin-top:60px;
-}
-.title p{
+.App .title p{
   padding-left:10px;
+}
+.App .namehead{
+  text-align: left;
+  font-size: 2em;
+  top:0;
+  padding:9%;
+  margin:0;
+  vertical-align: top;
+}
+.App .namebutton{
+  color:white;
+  background-color: black;
+  line-height: 3em;
+  padding-top:5px;
+  padding-bottom:5px;
+  font-size: 0.8em;
+  letter-spacing: .5px;
+  font-weight:600;
+  position:fixed;
+  bottom:4%;
+  border: 1px solid black;
+  width: 90%;
+  left:5% !important;
+  max-width:400px;
+  text-decoration: none;
+}
+.App .namebutton:hover{
+  background-color:white;
+  color:black;
+  transition: 0.3s ease;
+}
+.App input[type="text"]{
+  align-items:left;
+  border:None;
+  margin:10px;
+  margin-top:20px;
+  border-bottom:2px solid black;
+  margin:0;
+  width:90%;
+  font-size:18px;
+  padding-bottom:8px;
+}
+.App input[type="text"]:focus, .App input[type="text"]:focus-visible, .App input[type="text"]:active{
+  outline:None;
+}
+.Onboard-App .head{
+  font-size:2em;
+  padding-left:9%;
+}
+.Onboard-App .body{
+  margin-left:9% !important;
+  font-size: 1em !important;
+}
+.Onboard-App input[type="number"]{
+  border:None;
+  margin:10px;
+  margin-top:20px;
+  border-bottom:2px solid black;
+  margin-left:8%;
+  width:70%;
+  font-size:18px;
+  padding-bottom:8px;
+  display:flex;
+}
+.Onboard-App input[type="number"]:focus-visible, .Onboard-App input[type="number"]:focus{
+  outline:None;
+}
+.Onboard-App .fafa{
+  overflow:hidden;
+  float:left;
+  margin-left:10px;
+  margin-right:10px;
+  padding-top:0.4em;
+  font-size:1.4em;
+  vertical-align: bottom;
+}
+.Onboard-App .buttonConfirm{
+  position:fixed;
+  bottom:5%;
+  font-size:0.8em;
+  width:90%;
+  left:5%;
+  background-color: black;
+  padding-top:15px;
+  padding-bottom:15px;
+  color:white;
+  text-decoration:None;
+  text-align:center;
+  letter-spacing: 0.5px;
+  border:1px solid black;
+  font-weight:500;
+  transition: all 0.3s ease;
+}
+.Onboard-App .buttonConfirm:hover{
+  background-color: white;
+  color:black;
+  border:1px solid black;
+}
+.DashApp{
+  background-color: black;
+  color: white;
+  height:100%;
+  margin:0;
+}
+.DashApp .head{
+  padding-left:10%;
+  padding-top:18%;
+  font-size:12px;
+}
+.DashApp .money-value{
+  padding-left:10%;
+  font-size:20px;
+  padding-top:10px;
+  padding-bottom:20px;
+}
+.DashApp .budget-overview{
+  width:38%;
+  background-color:black;
+  padding-left:9%;
+  padding-right:3%;
+  font-size:12px !important;
+  float:left;
+}
+.DashApp .expense-overview{
+  width:38%;
+  padding-left:3%;
+  padding-right:9%;
+  background-color:black;
+  overflow:hidden;
+  float:left;
+  font-size:12px !important;
+}
+.graph{
+  height:100px;
+  padding:9%;
+  background-color:black;
+}
+.past-transactions{
+  background-color:white !important;
+  color:black !important;
+  border:None;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  padding-left:8%;
+  align-items: left;
+  padding-top:1px;
+}
+.past-transactions .heading{
+  font-size:16px;
+  padding-top:10px;
+  font-weight:700;
+}
+.add-button{
+  border-radius:20px;
+  width:40px;
+  height:40px !important;
+  background-color: black;
+  color:white;
+  font-size:22px;
+  position:fixed;
+  text-align:center;
+  left:44%;
+  flex-wrap: wrap-reverse;
+  border:1px solid black;
+  transition:all 0.3s ease;
+  color:white;
+  bottom:10px !important;
+}
+.add-button:hover{
+  background-color:rgb(0,0,0,0.8);
+}
+.DashApp .hr{
+  margin-top:5px;
+  text-align:center;
+  float:center;
+}
+.extra{
+  margin-top:10px;
+  width:35px;
+  height:3px;
+  background-color: grey;
+  align-items:center;
+  text-align:center;
+  float:center;
+  margin-left:40%;
+}
+.Link{
+  text-decoration: None !important;
+  color:white;
+}
+.add-expense-app{
+  padding:9%;
+}
+.add-expense-app .heading{
+  font-weight:600;
+  font-size:22px;
+  
+}
+.add-expense-app .categories{
+  padding-top:20px;
+}
+.add-expense-app img{
+  border-radius:15px;
+  width:38% !important;
+  padding:10px;
+  margin-right:3%;
+  font-size:3.5em;
+  color:green;
+  box-shadow:0px 0px 10px grey;
+  margin-bottom:10px;
+}
+.add-expense-app img:hover{
+  background-color: greenyellow;
+}
+.add-expense-app .next{
+  width:94%;
+  margin-left:3%;
+  background-color: black;
+  color:white;
+  font-size:14px;
+  border:1px solid black;
+  padding-top:10px;
+  padding-bottom:10px;
+  line-height:20px;
+  float:left;
+  font-weight:600;
+  letter-spacing:0.4px;
+  margin-bottom:14px;
+  margin-top:10px;
+  cursor:pointer;
+}
+.add-expense-app .next:hover{
+  background-color: rgb(0,0,0,0.8);
 }

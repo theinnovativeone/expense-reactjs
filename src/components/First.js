@@ -8,11 +8,14 @@ function App(props) {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                Welcome to Expense Management App.
+                <p className="head">
+                Manage your expenses easily.
                 </p>
-                <Link to="/Home" className="App-button">
-                    Get Started
+                <p className="body">
+                    The best application for managing your expenses, track all transactions, add new ones.
+                </p>
+                <Link to="/NamePage" className="App-button">
+                    Start
                 </Link>
             </header>
         </div>
