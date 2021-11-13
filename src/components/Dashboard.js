@@ -7,6 +7,12 @@ import { faRupeeSign } from '@fortawesome/free-solid-svg-icons'
 function App(props) {
     return (
         <div className="DashApp">
+            <br/>
+            <ul className="ul">
+                <li className='l'><hr width='0.1px' /></li>
+                <li className='li'><hr width='0.1px' /></li>
+                <li className='lii'><hr width='0.1px' /></li>
+            </ul>
             <div className="head">
                 Your total balance
             </div>
