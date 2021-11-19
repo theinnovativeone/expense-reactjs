@@ -44,7 +44,7 @@ class App extends React.Component {
                 </div>
                 <div className="setvalue" style={{display:this.state.displayVal}}>
                     <div className="heading">Enter Cost.</div>
-                    <input type="number" className="costinput" />
+                    Rs. <input type="number" className="costinput" />
                     <Link to="/Dashboard">
                         <button className="movenext">Confirm</button>
                     </Link>
