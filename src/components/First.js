@@ -1,9 +1,15 @@
 import React from "react";
 import logo from './logo.svg';
 import './Style.css';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
-function App(props) {
+const App=()=> {    
+    if (localStorage.getItem('userName')){
+        return (
+            <Redirect to='/Dashboard'/>
+            )
+    }
+    else{
     return (
         <div className="App">
             <header className="App-header">
@@ -19,7 +25,7 @@ function App(props) {
                 </Link>
             </header>
         </div>
-    );
+    )
 }
-
-export default App;
+}
+export default App

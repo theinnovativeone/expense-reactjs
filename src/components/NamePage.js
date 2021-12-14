@@ -1,19 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import './Style.css';
 import {Link} from "react-router-dom";
 
-function App(props) {
+const App = ()=>{
+    const [userName, setUserName] = useState('');
+    const handle = () => {
+        localStorage.setItem('userName', userName);
+     };
     return (
         <div className="App">
             <p className="namehead">
                 Enter your <br/>name.
-                <input type="text" />
+                <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)}/>
             </p>
-            <Link to="/Onboarding" className="namebutton">
+            <Link to="/Onboarding" onclick={handle()} className="namebutton">
                 Next
             </Link>
         </div>
-    );
+    )
 }
-
-export default App;
+export default App

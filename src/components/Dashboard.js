@@ -35,13 +35,29 @@ class App extends React.Component {
         }));
       }
       render(){
+          var budgetv=localStorage.getItem('budget');
+          var expv=0;
+          var balv=budgetv-expv;
+          var uname=localStorage.getItem('userName');
+          const handlechange=(e)=>{
+              budgetv=e.target.value;
+              localStorage.setItem('budget',budgetv)
+          }
+        const transData=[
+            ['Spotify',100],
+            ['Dettol',200]
+        ]
+
         return (
             <div className="DashApp">
                 <br/>
                 <div className="menu" style={{right:this.state.displayMenu}}>
-                    <div className="menuhead">Welcome, </div>
+                    <div className="menuhead">Welcome, {uname}</div>
                     <div className="bodymenu">
-                        Change Monthly Budget<br/><br/>
+                        Change Monthly Budget<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Current Budget: {budgetv}<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input className="changeBudget" type="number" placeholder={budgetv} onChange={(e)=>handlechange(e)} />
+                        <br/><br/>
                         <span onClick={()=> this.handleMenuClose()} style={{cursor:'pointer'}}>Exit Menu</span>
                     </div>
                 </div>
@@ -53,14 +69,14 @@ class App extends React.Component {
                 <div className="head">
                     Your total balance
                 </div>
-                <div className="money-value"><FontAwesomeIcon className='fafa' icon={faRupeeSign} /> 7,540.00</div>
+                <div className="money-value"><FontAwesomeIcon className='fafa' icon={faRupeeSign} /> {balv}</div>
                 <div className="budget-overview">Total Budget
                     <span className="figure"><br/>
-                    <FontAwesomeIcon className='fafa' icon={faRupeeSign} /></span>
+                    <FontAwesomeIcon className='fafa' icon={faRupeeSign} /></span> {budgetv}
                 </div>
                 <div className="expense-overview">Total Expenses
                     <span className="figure"><br/>
-                    <FontAwesomeIcon className='fafa' icon={faRupeeSign} /></span>
+                    <FontAwesomeIcon className='fafa' icon={faRupeeSign} /></span> {expv}
                 </div>
                 <div className="graph">
                     <div className="prnt">
@@ -74,14 +90,16 @@ class App extends React.Component {
                     </LineChart>
                 </ResponsiveContainer>
                 </div>
+
+
+        {/* Past Transactions Here*/}
                 <div className="past-transactions">
                     <div className="extra"></div>
                     <div className="heading">Last Transactions</div>
                     <ul className="transactions">
-                        <li>Spotify 
-                            <span className="money"></span>
-                            <p className="Date"></p> 
-                        </li>
+                    {transData.map(tl => (
+                    <li className="translist">{tl[0]} <span className="tvalue">{tl[1]}</span></li>
+                    ))}
                     </ul>
                 </div>
                 <Link className="Link" to="/addexpense">

@@ -231,6 +231,7 @@ Link{
 .graph h4 .Link{
   text-decoration: none;
   color:inherit;
+  font-size:12px;
 }
 .graph h4:hover{
   background-color:transparent;
@@ -359,13 +360,13 @@ Link{
   cursor:pointer;
 }
 .add-expense-app .costinput{
-  margin-top:20px;
-  padding-top:20px;
+  margin-top:5px;
+  padding-top:10px;
   margin-left:15px;
   font-size:16px;
   border:0;
   border-bottom:1px solid black;
-  width:70%;
+  width:72%;
   outline:0;
 }
 .add-expense-app .movenext{
@@ -416,5 +417,23 @@ Link{
 }
 .transactions{
   list-style-type:none;
-  margin-left:0;
+  margin-left:0px;
+  padding-left:10px;
+}
+.categories .list{
+  border:0;
+  border-bottom:1px solid black;
+  width:90%;
+  font-size:16px;
+  padding-bottom:10px;
+  padding-left:2px;
+  outline:None;
+}
+.highlights{
+  padding:10px;
+  padding-left:15px;
+}
+.translist{
+  padding-left:0px;
+  margin-left:0px;
 }

@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import './Style.css';
 import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRupeeSign } from '@fortawesome/free-solid-svg-icons'
 
-function App(props) {
+const App=()=>{
+    const [budget,setBudget]=useState();
+
+    const handle=()=>{
+        localStorage.setItem('budget',budget)
+    }
+    
     return (
         <div className="Onboard-App">
             <p className="head">
@@ -14,9 +20,9 @@ function App(props) {
                 Please set your <br/>monthly budget.
             </p>
             <FontAwesomeIcon className='fafa' icon={faRupeeSign} />
-                <input type="number" className="budgetinput"/>
+                <input type="number" onChange={(e) => setBudget(e.target.value)} className="budgetinput"/>
             
-            <Link to="/Dashboard" className="buttonConfirm">
+            <Link to="/Dashboard" onclick={handle()} className="buttonConfirm">
                 Confirm
             </Link>
         </div>
