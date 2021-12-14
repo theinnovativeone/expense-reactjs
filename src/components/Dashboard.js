@@ -36,18 +36,22 @@ class App extends React.Component {
       }
       render(){
           var budgetv=localStorage.getItem('budget');
-          var expv=0;
-          var balv=budgetv-expv;
+          var expv=0; 
           var uname=localStorage.getItem('userName');
           const handlechange=(e)=>{
               budgetv=e.target.value;
               localStorage.setItem('budget',budgetv)
           }
         const transData=[
-            ['Spotify',100],
-            ['Dettol',200]
+            ['Education',100],
+            ['Medicine',117]
         ]
-
+        for (var i in transData){
+            expv=expv+transData[i][1]
+            
+        }
+        var balv=budgetv-expv;
+        
         return (
             <div className="DashApp">
                 <br/>
@@ -98,7 +102,7 @@ class App extends React.Component {
                     <div className="heading">Last Transactions</div>
                     <ul className="transactions">
                     {transData.map(tl => (
-                    <li className="translist">{tl[0]} <span className="tvalue">{tl[1]}</span></li>
+                    <li className="translist">{tl[0]} <span className="tvalue">- <FontAwesomeIcon className='fafa' icon={faRupeeSign} /> {tl[1]}</span></li>
                     ))}
                     </ul>
                 </div>
