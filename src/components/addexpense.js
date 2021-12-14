@@ -3,8 +3,8 @@ import './Style.css';
 import {Link} from "react-router-dom";
 
 const App=()=>{
-    const [EName, setEName]=useState('')
-    const [cost, setCost]=useState()
+    const [EName, setEName]=useState('Education')
+    const [cost, setCost]=useState(0)
     const transData=JSON.parse(localStorage.getItem('transData'))
     
 

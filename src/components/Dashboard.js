@@ -3,7 +3,7 @@ import './Style.css';
 import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRupeeSign } from '@fortawesome/free-solid-svg-icons'
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis,YAxis, ResponsiveContainer } from 'recharts';
 
 class App extends React.Component {
     constructor(props) {
@@ -46,9 +46,9 @@ class App extends React.Component {
                 <div className="menu" style={{right:this.state.displayMenu}}>
                     <div className="menuhead">Welcome, {uname}</div>
                     <div className="bodymenu">
-                        Change Monthly Budget<br/>
+                        Change Monthly Budget<br/><br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;Current Budget: {budgetv}<br/>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<input className="changeBudget" type="number" placeholder={budgetv} onChange={(e)=>handlechange(e)} />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input className="changeBudget" type="number" placeholder='New Budget' onChange={(e)=>handlechange(e)} />
                         <br/><br/>
                         <span onClick={()=> this.handleMenuClose()} style={{cursor:'pointer'}}>Exit Menu</span>
                     </div>
@@ -75,11 +75,12 @@ class App extends React.Component {
                         <h3>Recent Stats</h3> <h4><Link className="Link" to="/stats">View More</Link></h4>
                     </div>
                 <ResponsiveContainer width="100%" height="85%">
-                    <LineChart data={data} margin={{ top: 5, right: 20, left: 10, bottom: 5 }} >
+                <BarChart width={140} data={data} height={40}>
                     <XAxis stroke="#fff" dataKey='name' interval={'preserveStartEnd'}/>
-                    <Tooltip />
-                    <Line type="monotone" dataKey='amt'  activeDot={{ r: 6 }} stroke="#fff" yAxisId={1} />
-                    </LineChart>
+                    <YAxis type="number" stroke="#fff" />
+                    <Bar type="monotone" dataKey='amt'  activeDot={{ r: 6 }} stroke="#fff" fill="#fff"/>
+                </BarChart>
+                    
                 </ResponsiveContainer>
                 </div>
 
