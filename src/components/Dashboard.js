@@ -2,7 +2,7 @@ import React from "react";
 import './Style.css';
 import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRupeeSign } from '@fortawesome/free-solid-svg-icons'
+import { faRupeeSign, faMoneyBillAlt, faQuestionCircle,faMoneyCheckAlt, faSignOutAlt} from '@fortawesome/free-solid-svg-icons'
 import { BarChart, Bar, XAxis,YAxis, ResponsiveContainer } from 'recharts';
 
 class App extends React.Component {
@@ -44,13 +44,17 @@ class App extends React.Component {
             <div className="DashApp">
                 <br/>
                 <div className="menu" style={{right:this.state.displayMenu}}>
-                    <div className="menuhead">Welcome, {uname}</div>
+                    <div className="menuhead">{uname}</div>
                     <div className="bodymenu">
-                        Change Monthly Budget<br/><br/>
+                    <FontAwesomeIcon className='fafa' icon={faMoneyCheckAlt} /> &nbsp; Change Monthly Budget<br/><br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;Current Budget: {budgetv}<br/>
                         &nbsp;&nbsp;&nbsp;&nbsp;<input className="changeBudget" type="number" placeholder='New Budget' onChange={(e)=>handlechange(e)} />
                         <br/><br/>
-                        <span onClick={()=> this.handleMenuClose()} style={{cursor:'pointer'}}>Exit Menu</span>
+                        <Link to='/helpsupport' className='helpLink'><FontAwesomeIcon className='fafa' icon={faQuestionCircle} /> &nbsp; Help and Support</Link><br/>
+                        <Link to='/addexpense' className='helpLink'><FontAwesomeIcon className='fafa' icon={faMoneyBillAlt} /> &nbsp; Add Expense</Link><br/>
+                        <span onClick={()=> this.handleMenuClose()} style={{cursor:'pointer',lineHeight:'40px'}}>
+                        <FontAwesomeIcon className='fafa' icon={faSignOutAlt} /> &nbsp; Exit Menu</span>
+
                     </div>
                 </div>
                 <ul className="ul" onClick={()=> this.handleMenuOpen()}>
@@ -58,6 +62,7 @@ class App extends React.Component {
                     <li className='li'><hr width='0.1px' /></li>
                     <li className='lii'><hr width='0.1px' /></li>
                 </ul>
+                <div className="hiuser">Hi, {uname}</div>
                 <div className="head">
                     Your total balance
                 </div>

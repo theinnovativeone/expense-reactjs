@@ -6,6 +6,8 @@ import Onboarding from './components/Onboarding';
 import First from './components/First';
 import addexpense from './components/addexpense';
 import Stats from './components/statistics';
+import HelpSupport from './components/HelpSupport';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +24,7 @@ function App(props){
           <Route exact path="/Onboarding" component={Onboarding} />
           <Route exact path="/Addexpense" component={addexpense} />
           <Route exact path="/stats" component={Stats} />
+          <Route exact path="/helpsupport" component={HelpSupport} />
         </Switch>
     </Router>
   );

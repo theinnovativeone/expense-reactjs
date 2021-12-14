@@ -23,7 +23,7 @@ class App extends React.Component{
                     </BarChart>
                 </ResponsiveContainer>
                 </div>
-                <Link to='/Dashboard'>Back</Link>
+                <Link to='/Dashboard'>&#8617; Back to Home</Link>
             </div>
         )
     }
