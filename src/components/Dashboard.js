@@ -4,17 +4,6 @@ import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRupeeSign } from '@fortawesome/free-solid-svg-icons'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-const data = [
-    { name: 'Dec', amt: 2400 },
-    { name: 'Jan', amt: 210  },
-    { name: 'Feb', amt: 1590 },
-    { name: 'Mar', amt: 2400 },
-    { name: 'Apr', amt: 210  },
-    { name: 'May', amt: 1590 },
-    { name: 'Jun', amt: 2400 },
-    { name: 'Jul', amt: 210  },
-    { name: 'Aug', amt: 1590 }
-];
 
 class App extends React.Component {
     constructor(props) {
@@ -36,19 +25,18 @@ class App extends React.Component {
       }
       render(){
           var budgetv=localStorage.getItem('budget');
-          var expv=0; 
+          var expv=0;
           var uname=localStorage.getItem('userName');
           const handlechange=(e)=>{
               budgetv=e.target.value;
               localStorage.setItem('budget',budgetv)
           }
-        const transData=[
-            ['Education',100],
-            ['Medicine',117]
-        ]
+          const transData=JSON.parse(localStorage.getItem('transData'));
+        
+        const data=[];
         for (var i in transData){
             expv=expv+transData[i][1]
-            
+            data.push({'name':transData[i][0],'amt':transData[i][1]})
         }
         var balv=budgetv-expv;
         
@@ -88,9 +76,9 @@ class App extends React.Component {
                     </div>
                 <ResponsiveContainer width="100%" height="85%">
                     <LineChart data={data} margin={{ top: 5, right: 20, left: 10, bottom: 5 }} >
-                    <XAxis stroke="#fff" dataKey="name" interval={'preserveStartEnd'}/>
+                    <XAxis stroke="#fff" dataKey='name' interval={'preserveStartEnd'}/>
                     <Tooltip />
-                    <Line type="monotone" dataKey="amt"  activeDot={{ r: 6 }} stroke="#fff" yAxisId={1} />
+                    <Line type="monotone" dataKey='amt'  activeDot={{ r: 6 }} stroke="#fff" yAxisId={1} />
                     </LineChart>
                 </ResponsiveContainer>
                 </div>

@@ -6,9 +6,10 @@ import { faRupeeSign } from '@fortawesome/free-solid-svg-icons'
 
 const App=()=>{
     const [budget,setBudget]=useState();
-
+    var transData=[];
     const handle=()=>{
         localStorage.setItem('budget',budget)
+        localStorage.setItem('transData',JSON.stringify(transData))
     }
     
     return (
